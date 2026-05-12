@@ -52,15 +52,15 @@ imbk_dl_comp/
 1. EDA 수행 및 데이터 전처리
    1. 결측치: **의사 결측치 존재 확인**  
        데이터의 성격상 결측 자체가 하나의 정보가 될 수도 있음  
-       -> "unknown"으로 별도의 카테고리화
+       -> **"unknown"**으로 별도의 카테고리화
       - **Type_of_Loan**  
         No Data 11408  
         not specified 1408  
-         컬럼 특성상 유니크 값이 많으므로 결측치를 대체값으로 채우지 않음. 대체값 넣어버리면 데이터 왜곡 생길 가능성 있기 때문.
+        컬럼 특성상 유니크 값이 많으므로 결측치를 다른 값으로 대체하지 않음. 대체값 넣어버리면 데이터 왜곡 생길 가능성 있기 때문.
 
       - **Payment_of_Min_Amount**  
         NM 12007  
-        컬럼이 바이너리 값으로 이루어져므로 결측치를 그대로 둠.
+        컬럼이 바이너리 값으로 이루어져므로 결측치를 다른 값으로 대체하지 않음.
 
    2. 타겟 분포 확인
       Standard에 고객이 몰려있고, Good 비율이 가장 낮음  
@@ -72,7 +72,7 @@ imbk_dl_comp/
        <img width="589" height="433" alt="image" src="https://github.com/user-attachments/assets/fb2e8b83-6d9e-46ee-9760-28c8a5a7e737" />
 
    3. 상관관계 히트맵상 Credit*Score와 유의한 관계가 있는 변수는  
-      \_Credit_Mix, Num_of_Delayed_Payment, Changed_Credit_Limit, Num_Bank_Accounts, Payment_of_Min_Amount*  
+      \_Credit_Mix, Num_of_Delayed_Payment, Changed_Credit_Limit, Num_Bank_Accounts, Payment_of_Min_Amount\_    
        <img width="1219" height="990" alt="image" src="https://github.com/user-attachments/assets/fffcb7ac-8839-4386-9153-16960b31c7e8" />  
        따라서 피처 셀렉션에 위 변수들을 먼저 고려했음.  
        (피처 셀렉션 결과 일부 변수만 포함하는 것보다 타겟 제외 모든 변수들로 학습했을 때 accuracy가 더 높게 출력됨.)
