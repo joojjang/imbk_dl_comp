@@ -30,7 +30,7 @@ imbk_dl_comp/
 └── requirements.txt
 ```
 
-### 라이브러리 리스트
+### 기술 스택
 
 #### Data Manipulation
 
